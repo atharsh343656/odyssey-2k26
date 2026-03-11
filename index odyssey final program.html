@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Marthandam College of Engineering and Technology Presents Odyssey2K26 - Celebrate Talent, Creativity, Innovation">
+    <title>Odyssey 2K26 - Marthandam College of Engineering and Technology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <i data-lucide="rocket"></i>
+                ODYSSEY<span>2K26</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#events">Events</a>
+                <a href="#winners">Live Winners</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-bg">
+            <div class="glow glow-1"></div>
+            <div class="glow glow-2"></div>
+        </div>
+        <div class="hero-content reveal">
+            <p class="college-name"
+                style="font-family: var(--font-heading); font-weight: 600; letter-spacing: 2px; color: var(--secondary); margin-bottom: 10px;">
+                MARTHANDAM COLLEGE OF ENGINEERING AND TECHNOLOGY</p>
+            <span class="badge">Inter-College Cultural Fest</span>
+            <h1 class="glitch" data-text="ODYSSEY 2K26">ODYSSEY 2K26</h1>
+            <p class="tagline">A Journey of Talent, Creativity, and Celebration</p>
+
+            <div id="countdown" class="countdown-container reveal">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <label>Days</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <label>Hours</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <label>Min</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <label>Sec</label>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#events" class="btn btn-primary">Explore Events</a>
+                <a href="#contact" class="btn btn-secondary">Register Now</a>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <i data-lucide="chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>About the Fest</h2>
+                <p>Discover the vision behind the most anticipated cultural extravaganza.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card glass">
+                    <i data-lucide="sparkles" class="card-icon"></i>
+                    <h3>The Journey</h3>
+                    <p>ODYSSEY 2K26 is not just a fest; it's a cosmic journey bringing together the brightest minds and
+                        talents across colleges. It serves as a platform to express, explore, and elevate your creative
+                        spirit.</p>
+                </div>
+                <div class="about-card glass">
+                    <i data-lucide="target" class="card-icon"></i>
+                    <h3>Mission & Vision</h3>
+                    <p>To foster a community of innovation and artistry, celebrating diversity through healthy
+                        competition. We aim to create memories that last a lifetime and skills that shape the future.
+                    </p>
+                </div>
+                <div class="about-card glass">
+                    <i data-lucide="users" class="card-icon"></i>
+                    <h3>Organizing Committee</h3>
+                    <p>Hosted by the Marthandam College of Engineering and Technology Student Council. Designed to push
+                        the boundaries
+                        of artistic expression.</p>
+                </div>
+            </div>
+
+            <div class="highlights reveal">
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Colleges</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">9+</span>
+                    <span class="stat-label">Events</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5k+</span>
+                    <span class="stat-label">Participants</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section bg-darker">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>Featured Events</h2>
+                <p>Participate in our diverse range of competitions and showcase your talent.</p>
+            </div>
+
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card glass">
+                    <div class="event-icon"><i data-lucide="music"></i></div>
+                    <h3>Foot Loose (Solo & Team)</h3>
+                    <p class="event-type">Dance</p>
+                    <p class="event-desc">Showcase your dance moves! Compete in Solo or Team categories. Unleash the
+                        rhythm within.</p>
+                </div>
+                <!-- Event 2 -->
+                <div class="event-card glass">
+                    <div class="event-icon"><i data-lucide="mic"></i></div>
+                    <h3>Melody Mania (Solo & Team)</h3>
+                    <p class="event-type">Music</p>
+                    <p class="event-desc">Sing your heart out! Separate competitions for Solo and Team performances. Let
+                        the voices soar.</p>
+                </div>
+                <!-- Event 3 -->
+                <div class="event-card glass">
+                    <div class="event-icon"><i data-lucide="brain"></i></div>
+                    <h3>Mind Marathon</h3>
+                    <p class="event-type">Quiz Challenge</p>
+                    <p class="event-desc">Test your intellect in this fast-paced trivia and logic marathon.</p>
+                </div>
+                <!-- Event 4 -->
+                <div class="event-card glass">
+                    <div class="event-icon"><i data-lucide="camera"></i></div>
+                    <h3>Pixel Hunt</h3>
+                    <p class="event-type">Photography</p>
+                    <p class="event-desc">Capture the essence of the fest. Frame the perfect moment.</p>
+                </div>
+                <!-- Event 5 -->
+                <div class="event-card glass">
+                    <div class="event-icon"><i data-lucide="shirt"></i></div>
+                    <h3>Elite Walk</h3>
+                    <p class="event-type">Fashion Show</p>
+                    <p class="event-desc">Strut the runway. Showcase futuristic and cultural fusion designs.</p>
+                </div>
+                <!-- Event 6 -->
+                <div class="event-card glass">
+                    <div class="event-icon"><i data-lucide="palette"></i></div>
+                    <h3>Hue and You</h3>
+                    <p class="event-type">Painting</p>
+                    <p class="event-desc">Splash your imagination onto the canvas. Theme-based art challenge.</p>
+                </div>
+                <!-- Event 7 -->
+                <div class="event-card glass">
+                    <div class="event-icon"><i data-lucide="hand"></i></div>
+                    <h3>Henna Harmony</h3>
+                    <p class="event-type">Mehendi Art</p>
+                    <p class="event-desc">Intricate patterns and beautiful designs in our traditional mehendi contest.
+                    </p>
+                </div>
+                <!-- Event 8 -->
+                <div class="event-card glass">
+                    <div class="event-icon"><i data-lucide="recycle"></i></div>
+                    <h3>Junk Yard</h3>
+                    <p class="event-type">Best out of Waste</p>
+                    <p class="event-desc">Innovate and create functional models using recyclable materials.</p>
+                </div>
+                <!-- Event 9 -->
+                <div class="event-card glass">
+                    <div class="event-icon"><i data-lucide="paintbrush"></i></div>
+                    <h3>Art Arena</h3>
+                    <p class="event-type">Creative Art</p>
+                    <p class="event-desc">Unleash your creativity in an open-ended artistic showdown.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Winners Section -->
+    <section id="winners" class="section">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>Live Winners Panel <span class="live-ping"></span></h2>
+                <p>Real-time updates of champions across all events.</p>
+            </div>
+
+            <div class="winners-container glass">
+                <div class="table-responsive">
+                    <table class="winners-table">
+                        <thead>
+                            <tr>
+                                <th>Event Name</th>
+                                <th>Position</th>
+                                <th>Student Name</th>
+                                <th>College</th>
+                            </tr>
+                        </thead>
+                        <tbody id="winners-tbody">
+                            <!-- Populated by JS -->
+                            <tr>
+                                <td colspan="4" class="empty-state">Loading latest results...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="admin-link">
+                    <a href="admin.html"><i data-lucide="lock"></i> Event Organizers: Update Results</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section bg-darker">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>Gallery Preview</h2>
+                <p>Glimpses of past magic. This year, you could be here.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Placeholder images using Unsplash API -->
+                <div class="gallery-item span-row-2">
+                    <img src="https://images.unsplash.com/photo-1540039155732-6151551a1200?auto=format&fit=crop&q=80&w=600"
+                        alt="Dance Performance">
+                    <div class="overlay"><span>Dance</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=600"
+                        alt="Concert crowd">
+                    <div class="overlay"><span>Music</span></div>
+                </div>
+                <div class="gallery-item span-col-2">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80&w=800"
+                        alt="Stage event">
+                    <div class="overlay"><span>Elite Walk</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&q=80&w=600"
+                        alt="Art palette">
+                    <div class="overlay"><span>Art Arena</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600"
+                        alt="Microphone">
+                    <div class="overlay"><span>Melody Mania</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Have questions? Reach out to the student coordinators.</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info glass">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Vanguard Institute of Technology<br>Innovation Avenue, Tech City</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>Alex (General): +1 234 567 8900<br>Sam (Events): +1 234 567 8901</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@odyssey2k26.edu<br>support@odyssey2k26.edu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form glass" id="contact-form">
+                    <h3>Send a Message</h3>
+                    <div class="form-group">
+                        <input type="text" id="contact-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contact-email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contact-message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message <i data-lucide="send"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <i data-lucide="rocket"></i>
+                        ODYSSEY<span>2K26</span>
+                    </a>
+                    <p>A Journey of Talent, Creativity, and Celebration.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ODYSSEY Organizing Committee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

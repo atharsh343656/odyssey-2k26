@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Marthandam College of Engineering and Technology | ODYSSEY 2K26</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .admin-header {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--glass-border);
+            margin-bottom: 40px;
+        }
+
+        .admin-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: white;
+            font-family: var(--font-body);
+            appearance: none;
+            transition: var(--transition);
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group select option {
+            background: var(--bg-color);
+            color: white;
+        }
+
+        .admin-card {
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .action-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            background: rgba(255, 51, 102, 0.2);
+            color: #ff3366;
+            border: 1px solid rgba(255, 51, 102, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-sm:hover {
+            background: rgba(255, 51, 102, 0.4);
+        }
+
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #ff3366;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .delete-btn:hover {
+            background: rgba(255, 51, 102, 0.1);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        /* Admin Tabs Structure */
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .admin-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .admin-tab {
+            padding: 10px 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .admin-tab.active,
+        .admin-tab:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-section {
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .admin-header {
+                padding: 20px 0;
+            }
+
+            .admin-card {
+                padding: 20px;
+            }
+
+            #admin-form div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-header">
+        <a href="index.html" class="logo">
+            <i data-lucide="shield-check"></i>
+            ADMIN<span>PANEL</span>
+        </a>
+        <p
+            style="color: var(--primary); font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; margin-top: 10px; text-transform: uppercase;">
+            Marthandam College of Engineering and Technology</p>
+        <p style="color: var(--text-secondary); margin-top: 5px;">ODYSSEY 2K26 - Live Winners Management</p>
+    </div>
+
+    <div class="admin-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <a href="index.html" class="back-link" style="margin-bottom: 0;"><i data-lucide="arrow-left"
+                    style="width: 16px;"></i> Back to Main Site</a>
+            <button id="logout-btn" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;"><i
+                    data-lucide="log-out"></i> Logout</button>
+        </div>
+
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="winners">Prize List</button>
+            <button class="admin-tab" data-tab="schedule">Schedule</button>
+            <button class="admin-tab" data-tab="contact">Contacts</button>
+            <button class="admin-tab" data-tab="certificates">Certificates</button>
+        </div>
+
+        <!-- WINNERS SECTION -->
+        <div class="admin-section active" id="section-winners">
+            <div class="admin-card glass">
+                <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Upload New Winner</h3>
+                <form id="admin-form">
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-secondary);">Select
+                            Event</label>
+                        <select id="event-name" required>
+                            <option value="" disabled selected>-- Choose Event --</option>
+                            <option value="Foot Loose (Solo)">Foot Loose (Solo)</option>
+                            <option value="Foot Loose (Team)">Foot Loose (Team)</option>
+                            <option value="Melody Mania (Solo)">Melody Mania (Solo)</option>
+                            <option value="Melody Mania (Team)">Melody Mania (Team)</option>
+                            <option value="Mind Marathon">Mind Marathon (Quiz)</option>
+                            <option value="Elite Walk">Elite Walk (Fashion Walk)</option>
+                            <option value="Pixel Hunt">Pixel Hunt (Photography)</option>
+                            <option value="Henna Harmony">Henna Harmony (Mehendi)</option>
+                            <option value="Hue and You">Hue and You (Painting)</option>
+                            <option value="Junk Yard">Junk Yard (Best out of waste)</option>
+                            <option value="Art Arena">Art Arena (Art competition)</option>
+                        </select>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 8px; color: var(--text-secondary);">1st Prize
+                                Winner</label>
+                            <input type="text" id="prize-1-name" placeholder="Name">
+                            <input type="text" id="prize-1-college" placeholder="College" style="margin-top: 5px;">
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 8px; color: var(--text-secondary);">2nd Prize
+                                Winner</label>
+                            <input type="text" id="prize-2-name" placeholder="Name">
+                            <input type="text" id="prize-2-college" placeholder="College" style="margin-top: 5px;">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; justify-content: center; margin-top: 20px;">
+                        Update Prize List <i data-lucide="upload-cloud"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="admin-card glass">
+                <div class="action-header">
+                    <h3 style="font-size: 1.5rem;">Published Prizes</h3>
+                    <button id="clear-winners-btn" class="btn-sm"><i data-lucide="trash-2"
+                            style="width: 14px; display: inline-block; vertical-align: middle;"></i> Clear All</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="winners-table">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>1st Prize</th>
+                                <th>2nd Prize</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-winners-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCHEDULE SECTION -->
+        <div class="admin-section" id="section-schedule">
+            <div class="admin-card glass">
+                <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Add/Update Schedule</h3>
+                <form id="schedule-form">
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-secondary);">Time</label>
+                        <input type="text" id="schedule-time" placeholder="e.g. 9:00 AM" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-secondary);">Event</label>
+                        <input type="text" id="schedule-event" placeholder="e.g. Inauguration" required>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            style="display: block; margin-bottom: 8px; color: var(--text-secondary);">Category</label>
+                        <input type="text" id="schedule-category" placeholder="e.g. Ceremony" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-secondary);">Venue</label>
+                        <input type="text" id="schedule-venue" placeholder="e.g. Main Auditorium" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary"
+                        style="width: 100%; justify-content: center; margin-top: 20px;">
+                        Save Schedule <i data-lucide="calendar"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="admin-card glass">
+                <div class="action-header">
+                    <h3 style="font-size: 1.5rem;">Current Schedule</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="winners-table" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Event</th>
+                                <th>Venue</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-schedule-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACTS SECTION -->
+        <div class="admin-section" id="section-contact">
+            <div class="admin-card glass">
+                <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Manage Contacts</h3>
+                <form id="contact-form-admin">
+                    <h4 style="margin-bottom: 10px; color: var(--primary);">Staff Coordinators</h4>
+                    <div id="staff-contacts-container">
+                        <!-- JS generated inputs -->
+                    </div>
+                    <button type="button" id="add-staff-btn" class="btn-sm" style="margin-bottom: 20px;">+ Add
+                        Staff</button>
+
+                    <h4 style="margin-bottom: 10px; color: var(--secondary);">Student Coordinators</h4>
+                    <div id="student-contacts-container">
+                        <!-- JS generated inputs -->
+                    </div>
+                    <button type="button" id="add-student-btn" class="btn-sm" style="margin-bottom: 20px;">+ Add
+                        Student</button>
+
+                    <button type="submit" class="btn btn-accent"
+                        style="width: 100%; justify-content: center; margin-top: 20px;">
+                        Save Contacts <i data-lucide="users"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- CERTIFICATE SECTION -->
+        <div class="admin-section" id="section-certificates">
+            <div class="admin-card glass" style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Manage Certificates</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Upload PDF certificates for participants by their chest number.</p>
+                
+                <form id="certificate-form">
+                    <input type="hidden" id="cert-edit-id">
+                    <div class="form-group">
+                        <label>Chest Number</label>
+                        <input type="text" id="cert-chest-number" placeholder="e.g. MC-101" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Certificate File (PDF Base64 or URL)</label>
+                        <input type="text" id="cert-file-data" placeholder="Paste Base64 or PDF Link" required>
+                        <small style="color: var(--text-secondary); display: block; margin-top: 5px;">In a real app, this would be a file upload. Here we use Base64 strings or URLs.</small>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button type="submit" id="cert-submit-btn" class="btn btn-primary" style="flex: 2;">
+                            Upload Certificate <i data-lucide="file-up"></i>
+                        </button>
+                        <button type="button" id="cert-cancel-btn" class="btn btn-outline" style="flex: 1; display: none;">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="admin-card glass">
+                <div class="action-header">
+                    <h3 style="font-size: 1.5rem;">Certificate Records</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="winners-table">
+                        <thead>
+                            <tr>
+                                <th>Chest #</th>
+                                <th>File Path/Data</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-cert-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script src="admin.js"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+</body>
+
+</html>

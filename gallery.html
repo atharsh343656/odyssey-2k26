@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photo Gallery - Odyssey 2K26">
+    <title>Certificates - Odyssey 2K26</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="sparkles"></i>
+                ODYSSEY<span>2K26</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="schedule.html">Time Schedule</a>
+                <a href="winners.html" class="highlight-link">Live Prize List</a>
+                <a href="gallery.html" class="active">Certificates</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="admin-link"><i data-lucide="user"></i> Admin Login</a>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+        <div class="container reveal active">
+            <div class="section-header">
+                <h2>Get Your Certificate</h2>
+                <p>Enter your chest number to download your digital certificate.</p>
+            </div>
+
+            <div class="certificate-search-box glass" style="max-width: 600px; margin: 0 auto; padding: 40px; text-align: center;">
+                <div class="input-group" style="margin-bottom: 25px;">
+                    <label for="chest-number" style="display: block; margin-bottom: 15px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Enter Chest Number</label>
+                    <input type="text" id="chest-number" placeholder="e.g. MC-101" style="width: 100%; padding: 15px 25px; background: rgba(0,0,0,0.3); border: 2px solid var(--glass-border); border-radius: 12px; color: white; font-size: 1.2rem; text-align: center; transition: var(--transition); border-color: var(--secondary);">
+                </div>
+                <button id="search-btn" class="btn btn-primary" style="width: 100%;">
+                    <i data-lucide="search"></i> Find Certificate
+                </button>
+
+                <div id="result-container" style="margin-top: 40px; display: none;">
+                    <div style="padding: 30px; border-radius: 12px; background: rgba(0, 240, 255, 0.1); border: 1px dashed var(--secondary);">
+                        <i data-lucide="file-check" style="width: 48px; height: 48px; color: var(--secondary); margin-bottom: 15px;"></i>
+                        <h3 id="found-chest-number" style="color: white; margin-bottom: 10px;">Certificate Found!</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 20px;">Your certificate is ready for download.</p>
+                        <a id="download-link" href="#" class="btn btn-secondary" style="width: 100%;">
+                            <i data-lucide="download"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <div id="error-container" style="margin-top: 40px; display: none;">
+                    <div style="padding: 30px; border-radius: 12px; background: rgba(255, 0, 85, 0.1); border: 1px dashed var(--primary);">
+                        <i data-lucide="alert-circle" style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 15px;"></i>
+                        <h3 style="color: white; margin-bottom: 10px;">Not Found</h3>
+                        <p style="color: var(--text-secondary);">Sorry, we couldn't find a certificate for this chest number. Please check and try again.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i data-lucide="sparkles"></i>
+                        ODYSSEY<span>2K26</span>
+                    </a>
+                    <p>Celebrate Talent • Creativity • Innovation</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="events.html">Events</a>
+                    <a href="schedule.html">Time Schedule</a>
+                    <a href="winners.html">Live Winners</a>
+                    <a href="gallery.html">Certificates</a>
+                    <a href="login.html">Admin Login</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Odyssey2K26 Cultural Fest</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
