@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Live Prize Results - Odyssey 2K26">
+    <title>Live Winners - Odyssey 2K26</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="sparkles"></i>
+                ODYSSEY<span>2K26</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="schedule.html">Time Schedule</a>
+                <a href="winners.html" class="highlight-link active">Live Prize List</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="admin-link"><i data-lucide="user"></i> Admin Login</a>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section id="winners" class="section bg-darker" style="padding-top: 140px; min-height: 80vh;">
+        <div class="container reveal active">
+            <div class="section-header">
+                <h2>Live Prize List <span class="live-ping"></span></h2>
+                <p>Real-time updates! Watch this board as results are announced.</p>
+            </div>
+
+            <div class="winners-container glass">
+                <div class="table-responsive">
+                    <table class="winners-table" id="prize-list-table">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>1st Prize</th>
+                                <th>College</th>
+                                <th>2nd Prize</th>
+                                <th>College</th>
+                            </tr>
+                        </thead>
+                        <tbody id="live-winners-body">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i data-lucide="sparkles"></i>
+                        ODYSSEY<span>2K26</span>
+                    </a>
+                    <p>Celebrate Talent • Creativity • Innovation</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="events.html">Events</a>
+                    <a href="schedule.html">Time Schedule</a>
+                    <a href="winners.html">Live Winners</a>
+                    <a href="gallery.html">Certificates</a>
+                    <a href="login.html">Admin Login</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Odyssey2K26 Cultural Fest</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
